@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atlassian Offer Creator</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Atlassian Offer Creator</h1>
+    <div class="topbar">
+      <button onclick="showSection('section1')">
+        My Bussines Opportunities
+      </button>
+      <button onclick="showSection('section2')">
+        New Business Opportunity
+      </button>
+      <button>New Offer</button>
+      <button>New Version</button>
+    </div>
+    <div id="section1" class="section active">
+      <button class="dropdown-btn" id="BO">My Business Opportunities:</button>
+      <ul class="dropdown-menu" id="boList">
+      </ul>
+    </div>
+    <div id="section2" class="section">
+      <form id="bo-form">
+        <label>ID Offer</label>
+        <input type="text" id="orderNumber" />
+        <label>
+          Customer
+          <input type="text" id="technicalContact-companyName" />
+        </label>
+        <label
+          >Partner
+          <input type="text" id="billingContact-companyName" />
+        </label>
+        <label
+          >Probability of closing the deal
+          <input type="number" id="probability" min="0" max="100" />%
+        </label>
+        <div>
+          <textarea
+            id="description"
+            placeholder="Description of the business opportunity"
+          ></textarea>
+        </div>
+      </form>
+      <div class="quote">
+        <input type="file" id="jsonFile" accept=".json"/>
+        <button id="saveButton">Save</button>
+        <div id="dataTable"></div>
+      </div>
+    </div>
+    <script src="import_data.js"></script>
+  </body>
+</html>
